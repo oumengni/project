@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>销售数据分析 - 数据分析作品集</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(to right, rgba(74, 107, 175, 0.9), rgba(108, 140, 213, 0.7)), url('../images/project1-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .meta-item i {
+            margin-right: 0.5rem;
+        }
+        
+        .project-content {
+            padding: 4rem 0;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .project-section h2::after {
+            content: '';
+            position: absolute;
+            width: 3rem;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .project-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .visualization {
+            background-color: #f8fafc;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .chart-container {
+            height: 400px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .chart-description {
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .data-table th {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .insights {
+            background-color: #f1f5f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .insights h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .insights ul {
+            list-style: disc;
+            padding-left: 2rem;
+        }
+        
+        .insights li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .methodology {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .method-item {
+            flex: 1 1 300px;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .method-item h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .method-item h3 i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .conclusion {
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+        
+        .back-to-portfolio {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .project-meta {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>数据分析师作品集</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#showcase">作品集</a></li>
+                    <li><a href="../index.html#skills">技能</a></li>
+                    <li><a href="../index.html#about">关于我</a></li>
+                    <li><a href="../index.html#contact">联系方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project-header">
+        <div class="container">
+            <h1>销售数据分析</h1>
+            <p>运用Python和Pandas对销售数据进行深度分析，挖掘销售趋势和顾客行为模式</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2023年3月</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span>数据分析</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code"></i>
+                    <span>Python, Pandas, Matplotlib</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="project-section">
+                <h2>项目概述</h2>
+                <p>该项目旨在通过分析某电子商务平台三年的销售数据，识别销售趋势、顾客行为模式以及产品表现指标，为企业提供数据驱动的决策支持。通过深入的数据清洗、探索性分析和可视化，我们挖掘了对业务发展有价值的洞察。</p>
+                <p>项目使用Python生态系统中的Pandas进行数据处理，Matplotlib和Seaborn进行数据可视化，最终通过交互式仪表板展示分析结果，使决策者能够直观地理解复杂的数据关系。</p>
+            </div>
+
+            <div class="project-section">
+                <h2>数据探索</h2>
+                <p>项目使用的数据集包含超过100万条销售记录，涵盖产品、价格、顾客、地区和时间等多个维度。在进行深入分析之前，我们首先对数据进行了全面的清洗和预处理：</p>
+                
+                <div class="methodology">
+                    <div class="method-item">
+                        <h3><i class="fas fa-broom"></i>数据清洗</h3>
+                        <p>处理缺失值、删除重复记录、标准化格式，确保数据质量。</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-filter"></i>特征工程</h3>
+                        <p>创建时间特征、计算客户生命周期值、分析购买频率等衍生指标。</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-search"></i>探索性分析</h3>
+                        <p>通过描述性统计和可视化，初步理解数据分布和关系。</p>
+                    </div>
+                </div>
+                
+                <div class="visualization">
+                    <div class="chart-container">
+                        <img src="../images/sales_trend.jpg" alt="销售趋势分析图" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="chart-description">图1：2020-2023年季度销售趋势分析</p>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>关键发现</h2>
+                <div class="insights">
+                    <h3>销售趋势</h3>
+                    <ul>
+                        <li>过去三年销售额年均增长率为18.5%，其中移动设备类产品贡献了最大增长。</li>
+                        <li>销售呈现明显的季节性模式，第四季度销售额平均比其他季度高出32%。</li>
+                        <li>周末销售转化率比工作日高15%，但平均订单金额较低。</li>
+                    </ul>
+                </div>
+                
+                <div class="insights">
+                    <h3>客户行为</h3>
+                    <ul>
+                        <li>高价值客户群（前20%）贡献了总销售额的65%，购买频率是普通客户的3倍。</li>
+                        <li>新客户获取成本持续上升，但客户留存率同样提高了8个百分点。</li>
+                        <li>移动端购物比例从2020年的35%上升到2023年的58%，表明渠道偏好的明显转变。</li>
+                    </ul>
+                </div>
+                
+                <div class="visualization">
+                    <div class="chart-container">
+                        <img src="../images/customer_segments.jpg" alt="客户细分分析图" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="chart-description">图2：基于RFM模型的客户细分分析</p>
+                </div>
+                
+                <h3>产品表现</h3>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>产品类别</th>
+                                <th>销售占比</th>
+                                <th>年增长率</th>
+                                <th>平均利润率</th>
+                                <th>客户满意度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>智能手机</td>
+                                <td>28.5%</td>
+                                <td>+22.3%</td>
+                                <td>32.1%</td>
+                                <td>4.2/5</td>
+                            </tr>
+                            <tr>
+                                <td>笔记本电脑</td>
+                                <td>24.2%</td>
+                                <td>+15.7%</td>
+                                <td>27.8%</td>
+                                <td>4.0/5</td>
+                            </tr>
+                            <tr>
+                                <td>智能家居</td>
+                                <td>18.7%</td>
+                                <td>+35.2%</td>
+                                <td>38.5%</td>
+                                <td>4.5/5</td>
+                            </tr>
+                            <tr>
+                                <td>音频设备</td>
+                                <td>15.3%</td>
+                                <td>+12.1%</td>
+                                <td>41.2%</td>
+                                <td>4.3/5</td>
+                            </tr>
+                            <tr>
+                                <td>配件</td>
+                                <td>13.3%</td>
+                                <td>+8.5%</td>
+                                <td>52.7%</td>
+                                <td>3.9/5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>分析方法</h2>
+                <p>本项目采用了多种数据分析技术和方法，包括：</p>
+                
+                <div class="methodology">
+                    <div class="method-item">
+                        <h3><i class="fas fa-chart-line"></i>时间序列分析</h3>
+                        <p>使用分解法识别销售数据中的趋势、季节性和残差成分，预测未来销售走势。</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-users"></i>RFM客户细分</h3>
+                        <p>基于最近购买时间(Recency)、购买频率(Frequency)和消费金额(Monetary)对客户进行价值细分。</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-shopping-basket"></i>购物篮分析</h3>
+                        <p>通过关联规则挖掘产品之间的关联关系，优化产品组合和交叉销售策略。</p>
+                    </div>
+                </div>
+                
+                <p>数据分析的Python代码示例：</p>
+                <pre style="background: #1e293b; color: #fff; padding: 1.5rem; border-radius: 10px; overflow-x: auto; margin: 1.5rem 0;">
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 加载数据
+sales_data = pd.read_csv('sales_data.csv')
+
+# 数据预处理
+sales_data['order_date'] = pd.to_datetime(sales_data['order_date'])
+sales_data['year'] = sales_data['order_date'].dt.year
+sales_data['month'] = sales_data['order_date'].dt.month
+sales_data['day'] = sales_data['order_date'].dt.day
+sales_data['day_of_week'] = sales_data['order_date'].dt.dayofweek
+
+# 按季度聚合销售数据
+quarterly_sales = sales_data.groupby(pd.PeriodIndex(sales_data['order_date'], freq='Q'))['sales_amount'].sum().reset_index()
+quarterly_sales['order_date'] = quarterly_sales['order_date'].astype(str)
+
+# 可视化季度销售趋势
+plt.figure(figsize=(12, 6))
+sns.lineplot(x='order_date', y='sales_amount', data=quarterly_sales, marker='o', linewidth=2)
+plt.title('季度销售趋势 (2020-2023)', fontsize=15)
+plt.xlabel('季度')
+plt.ylabel('销售额 (元)')
+plt.xticks(rotation=45)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig('sales_trend.jpg', dpi=300)
+plt.show()
+
+# RFM客户细分分析
+rfm = sales_data.groupby('customer_id').agg({
+    'order_date': lambda x: (pd.Timestamp('now') - x.max()).days,  # Recency
+    'order_id': 'count',  # Frequency
+    'sales_amount': 'sum'  # Monetary
+}).rename(columns={
+    'order_date': 'recency', 
+    'order_id': 'frequency', 
+    'sales_amount': 'monetary'
+})
+
+# 为RFM指标创建分位数
+quantiles = rfm.quantile(q=[0.25, 0.5, 0.75])
+rfm_segmentation = rfm.copy()
+
+# 根据分位数对客户进行评分
+for indicator, q_value in zip(['recency', 'frequency', 'monetary'], quantiles.columns):
+    for i, q in enumerate(['25%', '50%', '75%']):
+        if indicator == 'recency':
+            rfm_segmentation[f'{indicator}_{i+1}'] = np.where(rfm[indicator] <= quantiles.loc[q, indicator], i+1, 0)
+        else:
+            rfm_segmentation[f'{indicator}_{i+1}'] = np.where(rfm[indicator] >= quantiles.loc[q, indicator], i+1, 0)
+
+# 计算RFM评分
+rfm_segmentation['r_score'] = rfm_segmentation['recency_1'] + rfm_segmentation['recency_2'] + rfm_segmentation['recency_3']
+rfm_segmentation['f_score'] = rfm_segmentation['frequency_1'] + rfm_segmentation['frequency_2'] + rfm_segmentation['frequency_3']
+rfm_segmentation['m_score'] = rfm_segmentation['monetary_1'] + rfm_segmentation['monetary_2'] + rfm_segmentation['monetary_3']
+rfm_segmentation['rfm_score'] = rfm_segmentation['r_score'] + rfm_segmentation['f_score'] + rfm_segmentation['m_score']
+
+# 客户细分
+segment_labels = ['低价值', '中等价值', '高价值', 'VIP客户']
+segment_thresholds = [0, 3, 6, 8, 9]
+rfm_segmentation['customer_segment'] = pd.cut(
+    rfm_segmentation['rfm_score'], 
+    bins=segment_thresholds, 
+    labels=segment_labels, 
+    include_lowest=True
+)
+
+# 可视化客户细分
+plt.figure(figsize=(10, 6))
+segment_counts = rfm_segmentation['customer_segment'].value_counts().sort_index()
+sns.barplot(x=segment_counts.index, y=segment_counts.values)
+plt.title('客户细分分布', fontsize=15)
+plt.xlabel('客户细分')
+plt.ylabel('客户数量')
+plt.tight_layout()
+plt.savefig('customer_segments.jpg', dpi=300)
+plt.show()</pre>
+            </div>
+
+            <div class="project-section">
+                <h2>业务建议</h2>
+                <div class="conclusion">
+                    <p>基于数据分析结果，我们向企业提出以下战略建议：</p>
+                    <ol style="padding-left: 2rem; line-height: 1.8;">
+                        <li><strong>聚焦高增长品类：</strong>增加智能家居和智能手机类产品的营销投入，这两个品类展现出最高的增长潜力和利润率。</li>
+                        <li><strong>优化季节性营销：</strong>根据销售季节性波动调整营销预算，在第四季度增加促销活动，在销售淡季开发特别促销计划。</li>
+                        <li><strong>客户细分策略：</strong>为VIP客户群体开发专属服务和产品，同时提高中等价值客户的转化率，扩大高价值客户基础。</li>
+                        <li><strong>移动端优化：</strong>鉴于移动端购物比例大幅增长，建议优先改进移动购物体验，加强APP功能和界面设计。</li>
+                        <li><strong>产品组合优化：</strong>基于购物篮分析结果，调整产品陈列和推荐系统，提高交叉销售和向上销售转化率。</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="back-to-portfolio">
+                <a href="../index.html#showcase" class="btn">返回作品集</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 数据分析作品集. 保留所有权利.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-medium"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
